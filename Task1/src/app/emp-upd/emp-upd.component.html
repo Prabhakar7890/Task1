@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="card col-md-6 offset-md-3 offset-md-3">
+      <div class="row">
+        <h3 class="text-center">Create employ </h3>
+        <hr/>
+        <div class="card-body">
+          <form #employForm="ngForm"  (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label>Id:</label>
+              <input type="number" class="form-control" id="id" [(ngModel)]="employ.id" name="id" #id="ngModel" required [class.is-invalid]="id.invalid && id.touched">
+            <small class="text-danger" [class.d-none]="id.valid || id.untouched">Invalid Details</small>
+            </div>
+            <div class="form-group">
+              <label>employName</label>
+              <input type="text" class="form-control" id="employName" [(ngModel)]="employ.employName" name="employName"   #employName="ngModel" required [class.is-invalid]="employName.invalid && employName.touched">
+              <small class="text-danger" [class.d-none]="employName.valid || employName.untouched">Invalid Details</small>
+                        </div>
+            <div class="form-group">
+              <label>Experience</label>
+              <input type="text" class="form-control" id="employ_head" [(ngModel)]="employ.experience" name="experience"  #experience="ngModel" required [class.is-invalid]="experience.invalid && experience.touched">
+              <small class="text-danger" [class.d-none]="experience.valid || experience.untouched">Invalid Details</small>
+            </div>
+            <br/>
+            <button class="btn btn-success" [disabled]="!employForm.valid" type="submit">Submit</button>
+  
+          </form>
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </div>
